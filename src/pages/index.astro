@@ -1,0 +1,48 @@
+---
+import Welcome from '../components/Welcome.astro';
+import Layout from '../layouts/Layout.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	<Welcome />
+	<button class="gradient-button">Click me</button>
+</Layout>
+
+<style>
+	.gradient-button {
+		background: linear-gradient(135deg, #2188ff 0%, #0366d6 100%);
+		color: white;
+		border: none;
+		padding: 12px 24px;
+		border-radius: 6px;
+		font-size: 16px;
+		font-weight: 600;
+		cursor: pointer;
+		transition: transform 0.2s, box-shadow 0.2s;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+
+	.gradient-button:hover {
+		transform: translateY(-1px);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	}
+
+	.gradient-button:active {
+		transform: translateY(0);
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+</style>
+
+<script>
+	// add a click event listener to the button
+	const button = document.querySelector('.gradient-button');
+	if (button) {
+		button.addEventListener('click', () => {
+			console.log('Button clicked');
+			alert('Button clicked');
+		});
+	}
+</script>
